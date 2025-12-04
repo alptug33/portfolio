@@ -38,32 +38,28 @@ async function buildAll() {
   console.log("building client...");
   await viteBuild();
 
-  // Only build server if not on Vercel (Vercel uses serverless functions)
-  if (!process.env.VERCEL) {
-    console.log("building server...");
-    const pkg = JSON.parse(await readFile("package.json", "utf-8"));
-    const allDeps = [
-      ...Object.keys(pkg.dependencies || {}),
-      ...Object.keys(pkg.devDependencies || {}),
-    ];
-    const externals = allDeps.filter((dep) => !allowlist.includes(dep));
+  // Build server for local production
+  console.log("building server...");
+  const pkg = JSON.parse(await readFile("package.json", "utf-8"));
+  const allDeps = [
+    ...Object.keys(pkg.dependencies || {}),
+    ...Object.keys(pkg.devDependencies || {}),
+  ];
+  const externals = allDeps.filter((dep) => !allowlist.includes(dep));
 
-    await esbuild({
-      entryPoints: ["server/index.ts"],
-      platform: "node",
-      bundle: true,
-      format: "cjs",
-      outfile: "dist/index.cjs",
-      define: {
-        "process.env.NODE_ENV": '"production"',
-      },
-      minify: true,
-      external: externals,
-      logLevel: "info",
-    });
-  } else {
-    console.log("Skipping server build (Vercel environment detected)");
-  }
+  await esbuild({
+    entryPoints: ["server/index.ts"],
+    platform: "node",
+    bundle: true,
+    format: "cjs",
+    outfile: "dist/index.cjs",
+    define: {
+      "process.env.NODE_ENV": '"production"',
+    },
+    minify: true,
+    external: externals,
+    logLevel: "info",
+  });
 }
 
 buildAll().catch((err) => {
