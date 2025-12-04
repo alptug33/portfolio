@@ -3,8 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 const skills = [
-  { category: "Languages", items: ["Java", "Kotlin", "Python", "SQL"] },
-  { category: "Frameworks", items: ["Spring Boot", "Hibernate (JPA)", "RxJava", "JUnit", "Mockito"] },
+  { category: "Languages", items: ["Java", "Python", "SQL", "TypeScript"] },
+  { category: "Frameworks", items: ["Spring Boot", "Spring", "React", "Hibernate (JPA)", "RxJava", "JUnit", "Mockito"] },
   { category: "Backend", items: ["RESTful APIs", "JSON Processing", "Maven", "Microservices"] },
   { category: "Cloud & DevOps", items: ["AWS Elastic Beanstalk", "EC2", "Git", "Docker"] },
   { category: "Databases", items: ["MySQL", "SQLite", "PostgreSQL"] },
