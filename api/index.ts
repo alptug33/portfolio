@@ -85,11 +85,15 @@ export default async function handler(
   req: VercelRequest,
   res: VercelResponse
 ) {
-  // If this is a static asset request, let Vercel handle it
-  // This shouldn't happen due to rewrite rules, but just in case
-  const url = req.url || '';
-  if (url.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|pdf|json|xml|txt|webp|avif|map)$/i)) {
-    res.status(404).json({ error: 'Static file not found' });
+  // Vercel should serve static files automatically, but if they reach here,
+  // we need to handle them. Check if this is a static file request.
+  const url = req.url || req.path || '';
+  const isStaticFile = /\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|pdf|json|xml|txt|webp|avif|map)$/i.test(url);
+  
+  if (isStaticFile) {
+    // Static files should be served by Vercel, not by our handler
+    // If they reach here, it means they don't exist in outputDirectory
+    res.status(404).send('File not found');
     return;
   }
 
