@@ -74,7 +74,8 @@ async function initializeApp() {
     throw err;
   });
 
-  // In production on Vercel, serve static files
+  // In production on Vercel, serve static files (fallback for SPA routing)
+  // Static assets are served by Vercel automatically, this is just for SPA routing
   serveStatic(app);
   
   initialized = true;
@@ -84,6 +85,14 @@ export default async function handler(
   req: VercelRequest,
   res: VercelResponse
 ) {
+  // If this is a static asset request, let Vercel handle it
+  // This shouldn't happen due to rewrite rules, but just in case
+  const url = req.url || '';
+  if (url.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|pdf|json|xml|txt|webp|avif|map)$/i)) {
+    res.status(404).json({ error: 'Static file not found' });
+    return;
+  }
+
   await initializeApp();
   return app(req, res);
 }
