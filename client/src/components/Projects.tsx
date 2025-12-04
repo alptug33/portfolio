@@ -6,34 +6,34 @@ import { Button } from "@/components/ui/button";
 
 const projects = [
   {
-    title: "Spring Boot AWS Deployment",
-    description: "Successfully deployed a Spring Boot 3 application to Amazon Elastic Beanstalk. Configured environment variables and utilized production profiles for scalable deployment.",
-    tags: ["Java", "Spring Boot", "AWS", "Elastic Beanstalk"],
-    link: "#"
+    title: "Job Portal Project",
+    description: "A simple Spring Boot–based job portal where employers post jobs and applicants browse and apply.",
+    tags: ["Java", "Spring Boot", "Html", "Thymeleaf"],
+    link: "https://github.com/alptug33/jobPortalProject"
   },
   {
     title: "Keyword Filtering Tool",
     description: "Java application integrated with Google Ads API. Filters out location and person names using NLP techniques and regex patterns for ad optimization.",
     tags: ["Java", "Google Ads API", "NLP", "Regex"],
-    link: "#"
+    link: "https://github.com/alptug33/anahtarkelime"
   },
   {
     title: "Spring Boot MVC CRUD",
     description: "Developed full-stack CRUD operations using the MVC pattern with Spring Boot and Hibernate. Implemented robust data handling on a MySQL database.",
     tags: ["Spring MVC", "Hibernate", "MySQL", "CRUD"],
-    link: "#"
+    link: "https://github.com/alptug33/javaspring-chad"
   },
   {
     title: "SMS Spam Detection App",
     description: "Android app detecting spam SMS using Naive Bayes and Firebase ML Kit. Monitors incoming messages in background and alerts users.",
     tags: ["Android", "Kotlin", "Machine Learning", "Firebase"],
-    link: "#"
+    link: "https://github.com/alptug33/SmsSpamDetection"
   },
   {
     title: "Spring Boot REST API",
     description: "Built a RESTful web service with Spring Boot implementing JSON-based data exchange, proper HTTP methods, and status codes.",
     tags: ["REST API", "Spring Boot", "JSON"],
-    link: "#"
+    link: "https://github.com/alptug33/springboot-apis-exampls"
   },
   {
     title: "Library Management System",

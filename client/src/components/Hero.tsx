@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import profileImage from '@assets/generated_images/professional_developer_profile_placeholder_with_abstract_tech_background.png';
+import profileImage from '@assets/background.png';
 
 export default function Hero() {
   return (

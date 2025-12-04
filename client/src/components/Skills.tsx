@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 
 const skills = [
   { category: "Languages", items: ["Java", "Python", "SQL", "TypeScript"] },
-  { category: "Frameworks", items: ["Spring Boot", "Spring", "React", "Hibernate (JPA)", "RxJava", "JUnit", "Mockito"] },
+  { category: "Frameworks", items: ["Spring Boot", "Spring", "React", "Hibernate (JPA)", "JUnit", "Mockito"] },
   { category: "Backend", items: ["RESTful APIs", "JSON Processing", "Maven", "Microservices"] },
   { category: "Cloud & DevOps", items: ["AWS Elastic Beanstalk", "EC2", "Git", "Docker"] },
   { category: "Databases", items: ["MySQL", "SQLite", "PostgreSQL"] },
@@ -20,7 +20,7 @@ export default function Skills() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl font-bold mb-4 text-primary font-mono">Technical Arsenal</h2>
+          <h2 className="text-3xl font-bold mb-4 text-primary font-mono">Tech Stack</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             My expertise lies in backend technologies, with a focus on robust Java ecosystems and cloud deployment.
           </p>
