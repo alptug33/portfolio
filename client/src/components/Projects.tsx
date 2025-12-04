@@ -36,10 +36,10 @@ const projects = [
     link: "#"
   },
   {
-    title: "PhotoNote",
-    description: "Android app for taking notes via photos. Stores data locally using Room and SQLite for offline access and efficient retrieval.",
-    tags: ["Android", "Room", "SQLite"],
-    link: "#"
+    title: "Library Management System",
+    description: "A comprehensive library management application. Features book tracking, member management, and borrowing systems.",
+    tags: ["Java", "Spring Boot", "Management System"],
+    link: "https://github.com/alptug33/library"
   }
 ];
 
